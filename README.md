@@ -21,13 +21,13 @@
 
 ---
 
-Naming things is hard. This sheet attempts to make it easier.
+Bir şeylere isim vermek zordur. Bu döküman, bu süreci daha kolay hale getirmeyi amaçlar.
 
-Although these suggestions can be applied to any programming language, I will use JavaScript to illustrate them in practice.
+Bu öneriler herhangi bir programlama dilinde uygulanabilir olsa da, bunları pratikte göstermek için JavaScript'i kullanacağım.
 
-## English language
+## İngilizce dili
 
-Use English language when naming your variables and functions.
+Değişkenleri ve fonksiyonları adlandırırken İngilizce dilini kullanın.
 
 ```js
 /* Bad */
@@ -39,7 +39,7 @@ const firstName = 'Gustavo'
 const friends = ['Kate', 'John']
 ```
 
-> Like it or not, English is the dominant language in programming: the syntax of all programming languages is written in English, as well as countless documentations and educational materials. By writing your code in English you dramatically increase its cohesiveness.
+> Beğenseniz de beğenmeseniz de, İngilizce programlamada egemen bir dil olarak kabul edilmektedir: Tüm programlama dillerinin sözdizimi(syntax) İngilizce olarak yazılır, ayrıca sayısız dokümantasyon ve eğitim materyali de İngilizce olarak hazırlanmıştır. Kodunuzu İngilizce olarak yazarak, kodunuzun bütünlüğünü büyük ölçüde artırırsınız.
 
 ## Naming convention
 
