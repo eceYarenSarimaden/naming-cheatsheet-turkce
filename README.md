@@ -323,20 +323,48 @@ println(fruits) // 5 yazar
 
 ### `reset`
 
-Sets a variable back to its initial value or state.
+Bir değişkeni ilk değerine veya durumuna geri ayarlar.
 
-```js
-const initialFruits = 5
-let fruits = initialFruits
+#### Swift
+
+```swift
+let initialFruits = 5
+var fruits = initialFruits
+
+func setFruits(_ nextFruits: Int) {
+  fruits = nextFruits
+}
+
 setFruits(10)
-console.log(fruits) // 10
+print(fruits) // 10
 
-function resetFruits() {
+func resetFruits() {
   fruits = initialFruits
 }
 
 resetFruits()
-console.log(fruits) // 5
+print(fruits) // 5
+```
+
+#### Kotlin
+
+```kt
+val initialFruits = 5
+var fruits = initialFruits
+
+fun setFruits(nextFruits: Int) {
+  fruits = nextFruits
+}
+
+setFruits(10)
+println(fruits) // 10
+
+fun resetFruits() {
+  fruits = initialFruits
+}
+
+resetFruits()
+println(fruits) // 5
 ```
 
 ### `remove`
