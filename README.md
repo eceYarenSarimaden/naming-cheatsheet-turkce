@@ -6,11 +6,11 @@
 
 # Mobil Geliştiriciler için Adlandırma Kılavuzu
 
-- [English language](#ingilizce-dili)
-- [Naming convention](#adlandırma-kuralı)
-- [S-I-D](#kısa-sezgisel-açıklayıcı)
-- [Avoid contractions](#kısaltmalardan-kaçının)
-- [Avoid context duplication](#içeriğin-tekrarlanmasından-kaçının)
+- [İngilizce dili](#i̇ngilizce-dili)
+- [Adlandırma kuralı](#adlandırma-kuralı)
+- [Kısa - Sezgisel - Açıklayıcı](#kısa---sezgisel---açıklayıcı)
+- [Kısaltmalardan kaçının](#kısaltmalardan-kaçının)
+- [İçeriğin tekrarlanmasından kaçının](#i̇çeriğin-tekrarlanmasından-kaçının)
 - [Reflect the expected result](#reflect-the-expected-result)
 - [Naming functions](#naming-functions)
   - [A/HC/LC pattern](#ahclc-pattern)
