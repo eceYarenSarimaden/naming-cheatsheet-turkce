@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# Adlandırma kılavuzu
+# Mobil Geliştiriciler için Adlandırma Kılavuzu
 
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
@@ -23,7 +23,7 @@
 
 Bir şeylere isim vermek zordur. Bu döküman, bu süreci daha kolay hale getirmeyi amaçlıyor.
 
-Bu öneriler herhangi bir programlama dilinde uygulanabilir olsa da, bunları pratikte göstermek için JavaScript'i kullanacağım.
+Bu öneriler herhangi bir programlama dilinde uygulanabilir olsa da, bunları pratikte göstermek için Swift ve Kotlin'i kullanacağım.
 
 ## İngilizce dili
 
@@ -91,24 +91,40 @@ val page_count = 5
 val should_update = true
 ```
 
-## S-I-D
+## Kısa - Sezgisel - Açıklayıcı
 
-A name must be _short_, _intuitive_ and _descriptive_:
+Bir isim _kısa_, _sezgisel_ ve _açıklayıcı_ olmalıdır:
 
-- **Short**. A name must not take long to type and, therefore, remember;
-- **Intuitive**. A name must read naturally, as close to the common speech as possible;
-- **Descriptive**. A name must reflect what it does/possesses in the most efficient way.
+- **Kısa**. Bir ismin yazılması ve hatırlanması uzun sürmemelidir;
+- **Sezgisel**. Bir isim mümkün olduğunca doğal bir şekilde okunmalı, günlük konuşma diline olabildiğince yakın olmalıdır;
+- **Açıklayıcı**. Bir isim ne yaptığını/neye sahip olduğunu en etkili şekilde yansıtmalıdır.
 
-```js
+### Swift
+
+```swift
 /* Bad */
-const a = 5 // "a" could mean anything
-const isPaginatable = a > 10 // "Paginatable" sounds extremely unnatural
-const shouldPaginatize = a > 10 // Made up verbs are so much fun!
+let a = 5 // "a" herhangi bir şeyi ifade edebilir
+let isPaginatable = a > 10 // "Paginatable" son derece doğal bir şekilde okunmuyor
+let shouldPaginatize = a > 10 // Uydurma fiiller eğlenceli olabilir!
 
 /* Good */
-const postCount = 5
-const hasPagination = postCount > 10
-const shouldPaginate = postCount > 10 // alternatively
+let postCount = 5
+let hasPagination = postCount > 10
+let shouldPaginate = postCount > 10 // alternatif olarak
+```
+
+### Kotlin
+
+```kt
+/* Bad */
+val a = 5 // "a" herhangi bir şeyi ifade edebilir
+val isPaginatable = a > 10 // "Paginatable" son derece doğal bir şekilde okunmuyor
+val shouldPaginatize = a > 10 // Uydurma fiiller eğlenceli olabilir!
+
+/* Good */
+val postCount = 5
+val hasPagination = postCount > 10
+val shouldPaginate = postCount > 10 // alternatif olarak
 ```
 
 ## Avoid contractions
