@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# Naming cheatsheet
+# Adlandırma kılavuzu
 
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
@@ -29,14 +29,28 @@ Bu öneriler herhangi bir programlama dilinde uygulanabilir olsa da, bunları pr
 
 Değişkenleri ve fonksiyonları adlandırırken İngilizce dilini kullanın.
 
-```js
+### Swift
+
+```swift
 /* Bad */
-const primerNombre = 'Gustavo'
-const amigos = ['Kate', 'John']
+let primerNombre = "Gustavo"
+let amigos = ["Kate", "John"]
 
 /* Good */
-const firstName = 'Gustavo'
-const friends = ['Kate', 'John']
+let firstName = "Gustavo"
+let friends = ["Kate", "John"]
+```
+
+### Kotlin
+
+```kt
+/* Bad */
+val primerNombre = "Gustavo"
+val amigos = listOf("Kate", "John")
+
+/* Good */
+val firstName = "Gustavo"
+val friends = listOf("Kate", "John")
 ```
 
 > Beğenseniz de beğenmeseniz de, İngilizce programlamada egemen bir dil olarak kabul edilmektedir: Tüm programlama dillerinin sözdizimi(syntax) İngilizce olarak yazılır, ayrıca sayısız dokümantasyon ve eğitim materyali de İngilizce olarak hazırlanmıştır. Kodunuzu İngilizce olarak yazarak, kodunuzun bütünlüğünü büyük ölçüde artırırsınız.
@@ -45,18 +59,36 @@ const friends = ['Kate', 'John']
 
 Yalnızca **bir** tane isimlendirme kuralı seçin ve ona uyun. Bu, `camelCase`, `PascalCase`, `snake_case` veya başka bir şey olabilir, önemli olan tutarlı olmasıdır. Birçok programlama dilinin kendi isimlendirme kuralları vardır; kullandığınız programlama dilinin dokümanlarını kontrol edin veya GitHub'da popüler olan projeleri inceleyin!
 
-```js
+### Swift
+
+```swift
 /* Bad */
-const page_count = 5
-const shouldUpdate = true
+let page_count = 5
+let shouldUpdate = true
 
 /* Good */
-const pageCount = 5
-const shouldUpdate = true
+let pageCount = 5
+let shouldUpdate = true
 
 /* Good as well */
-const page_count = 5
-const should_update = true
+let page_count = 5
+let should_update = true
+```
+
+### Kotlin
+
+```kt
+/* Bad */
+val page_count = 5
+val shouldUpdate = true
+
+/* Good */
+val pageCount = 5
+val shouldUpdate = true
+
+/* Good as well */
+val page_count = 5
+val should_update = true
 ```
 
 ## S-I-D
