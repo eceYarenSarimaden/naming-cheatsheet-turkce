@@ -12,9 +12,9 @@
 - [Kısaltmalardan kaçının](#kısaltmalardan-kaçının)
 - [İçeriğin tekrarlanmasından kaçının](#i̇çeriğin-tekrarlanmasından-kaçının)
 - [Beklenen sonucu yansıtın](#beklenen-sonucu-yansıtın)
-- [Naming functions](#naming-functions)
-  - [A/HC/LC pattern](#ahclc-pattern)
-    - [Actions](#actions)
+- [Fonksiyonları adlandırmak](#fonksiyonları-adlandırmak)
+  - [A/HC/LC deseni](#ahclc-deseni)
+    - [Eylemler](#eylemler)
     - [Context](#context)
     - [Prefixes](#prefixes)
 - [Singular and Plurals](#singular-and-plurals)
@@ -217,17 +217,17 @@ binding.button.isEnabled = isEnabled
 
 ---
 
-# Naming functions
+# Fonksiyonları adlandırmak
 
-## A/HC/LC Pattern
+## A/HC/LC Deseni
 
-There is a useful pattern to follow when naming functions:
+Fonksiyonları adlandırırken izlenecek işe yarar bir desen vardır:
 
 ```
 prefix? + action (A) + high context (HC) + low context? (LC)
 ```
 
-Take a look at how this pattern may be applied in the table below.
+Aşağıdaki tabloda bu desenin nasıl uygulanabileceğine bir göz atın.
 
 | Name                   | Prefix   | Action (A) | High context (HC) | Low context (LC) |
 | ---------------------- | -------- | ---------- | ----------------- | ---------------- |
@@ -236,32 +236,57 @@ Take a look at how this pattern may be applied in the table below.
 | `handleClickOutside`   |          | `handle`   | `Click`           | `Outside`        |
 | `shouldDisplayMessage` | `should` | `Display`  | `Message`         |                  |
 
-> **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means _you_ are about to update a component, while `shouldComponentUpdate` tells you that _component_ will update itself, and you are only controlling _when_ it should update.
-> In other words, **high context emphasizes the meaning of a variable**.
+> **Not:** Bir değişkenin anlamını içeriğin sırası etkiler. Örneğin, `shouldUpdateComponent` ifadesi _sizin_ bir bileşeni güncellemek üzere olduğunuz anlamına gelirken, `shouldComponentUpdate` size _bileşenin kendisini_ güncelleyeceğini söyler ve yalnızca ne zaman güncellenmesi gerektiğini kontrol edersiniz. Başka bir deyişle, **`high context` bir değişkenin anlamını vurgular**.
 
 ---
 
-## Actions
+## Eylemler
 
-The verb part of your function name. The most important part responsible for describing what the function _does_.
+Fonksiyon adının fiil kısmı. Fonksiyonun _ne yaptığını_ açıklayan en önemli kısımdır.
 
 ### `get`
 
-Accesses data immediately (i.e. shorthand getter of internal data).
+Verilere anında erişir (i.e. shorthand getter of internal data).
 
-```js
-function getFruitCount() {
-  return this.fruits.length
+#### Swift
+
+```swift
+func getFruitCount() -> Int {
+  return self.fruits.count
 }
 ```
 
-> See also [compose](#compose).
+#### Kotlin
 
-You can use `get` when performing asynchronous operations as well:
+```kt
+fun getFruitCount(): Int {
+  return fruits.size
+}
+```
 
-```js
-async function getUser(id) {
-  const user = await fetch(`/api/user/${id}`)
+> Ayrıca bkz [compose](#compose).
+
+Asenkron işlemler gerçekleştirirken de `get`'i kullanabilirsiniz:
+
+#### Swift
+
+```swift
+func getUser(id: String) async throws -> User {
+  let url = URL(string: "/api/user/\(id)")!
+  let (data, _) = try await URLSession.shared.data(from: url)
+  let user = try JSONDecoder().decode(User.self, from: data)
+  return user
+}
+```
+
+#### Kotlin
+
+```kt
+suspend fun getUser(id: String): User {
+  val url = URL("/api/user/$id")
+  val connection = url.openConnection() as HttpURLConnection
+  val data = connection.inputStream.bufferedReader().use { it.readText() }
+  val user = Gson().fromJson(data, User::class.java)
   return user
 }
 ```
