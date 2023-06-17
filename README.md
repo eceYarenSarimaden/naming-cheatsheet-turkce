@@ -6,11 +6,11 @@
 
 # Mobil Geliştiriciler için Adlandırma Kılavuzu
 
-- [English language](#english-language)
-- [Naming convention](#naming-convention)
-- [S-I-D](#s-i-d)
-- [Avoid contractions](#avoid-contractions)
-- [Avoid context duplication](#avoid-context-duplication)
+- [English language](#ingilizce-dili)
+- [Naming convention](#adlandırma-kuralı)
+- [S-I-D](#kısa-sezgisel-açıklayıcı)
+- [Avoid contractions](#kısaltmalardan-kaçının)
+- [Avoid context duplication](#içeriğin-tekrarlanmasından-kaçının)
 - [Reflect the expected result](#reflect-the-expected-result)
 - [Naming functions](#naming-functions)
   - [A/HC/LC pattern](#ahclc-pattern)
