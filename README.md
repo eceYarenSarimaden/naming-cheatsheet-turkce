@@ -11,7 +11,7 @@
 - [Kısa - Sezgisel - Açıklayıcı](#kısa---sezgisel---açıklayıcı)
 - [Kısaltmalardan kaçının](#kısaltmalardan-kaçının)
 - [İçeriğin tekrarlanmasından kaçının](#i̇çeriğin-tekrarlanmasından-kaçının)
-- [Reflect the expected result](#reflect-the-expected-result)
+- [Beklenen sonucu yansıtın](#beklenen-sonucu-yansıtın)
 - [Naming functions](#naming-functions)
   - [A/HC/LC pattern](#ahclc-pattern)
     - [Actions](#actions)
@@ -187,18 +187,32 @@ class MenuItem {
 }
 ```
 
-## Reflect the expected result
+## Beklenen Sonucu Yansıtın
 
-A name should reflect the expected result.
+Bir isim beklenen sonucu yansıtmalıdır.
 
-```jsx
-/* Bad */
-const isEnabled = itemCount > 3
-return <Button disabled={!isEnabled} />
+### Swift
 
-/* Good */
-const isDisabled = itemCount <= 3
-return <Button disabled={isDisabled} />
+```swift
+/* Kötü */
+let isDisabled = itemCount <= 3
+button.isEnabled = !isDisabled
+
+/* İyi */
+let isEnabled = itemCount > 3
+button.isEnabled = isEnabled
+```
+
+### Kotlin
+
+```kt
+/* Kötü */
+val isDisabled = itemCount <= 3
+binding.button.isEnabled = !isDisabled
+
+/* İyi */
+val isEnabled = itemCount > 3
+binding.button.isEnabled = isEnabled
 ```
 
 ---
