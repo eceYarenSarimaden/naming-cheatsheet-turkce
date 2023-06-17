@@ -293,17 +293,32 @@ suspend fun getUser(id: String): User {
 
 ### `set`
 
-Sets a variable in a declarative way, with value `A` to value `B`.
+Değeri `A` olan bir değişkenin değerini `B` olarak ayarlar.
 
-```js
-let fruits = 0
+#### Swift
 
-function setFruits(nextFruits) {
+```swift
+var fruits = 0
+
+func setFruits(_ nextFruits: Int) {
   fruits = nextFruits
 }
 
 setFruits(5)
-console.log(fruits) // 5
+print(fruits) // 5 yazar
+```
+
+#### Kotlin
+
+```kt
+var fruits = 0
+
+fun setFruits(nextFruits: Int) {
+  fruits = nextFruits
+}
+
+setFruits(5)
+println(fruits) // 5 yazar
 ```
 
 ### `reset`
