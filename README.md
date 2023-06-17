@@ -151,17 +151,39 @@ val onItmClk = {}
 val onItemClick = {}
 ```
 
-## Avoid context duplication
+## İçeriğin Tekrarlanmasından Kaçının
 
-A name should not duplicate the context in which it is defined. Always remove the context from a name if that doesn't decrease its readability.
+Bir isim tanımlandığı içeriği tekrarlamamalıdır. Eğer bu ismin okunabilirliğini azaltmıyorsa, her zaman isimden ilgili içeriği kaldırın.
 
-```js
+### Swift
+
+```swift
 class MenuItem {
-  /* Method name duplicates the context (which is "MenuItem") */
-  handleMenuItemClick = (event) => { ... }
+  /* Metot ismi içeriği ("MenuItem") tekrar eder */
+  func handleMenuItemClick(event: Event) {
+    . . .
+  }
+  
+  /* `MenuItem().handleClick()` olarak güzel bir şekilde okunur */
+  func handleClick(event: Event) {
+    . . .
+  }
+}
+```
 
-  /* Reads nicely as `MenuItem.handleClick()` */
-  handleClick = (event) => { ... }
+### Kotlin
+
+```kt
+class MenuItem {  
+  /* Metod ismi içeriği ("MenuItem") tekrar eder */
+  fun handleMenuItemClick(event: Event) {
+    . . .
+  }
+
+  /* `MenuItem().handleClick()` olarak güzel bir şekilde okunur */
+  fun handleClick(event: Event) {
+    . . .
+  }
 }
 ```
 
