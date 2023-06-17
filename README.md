@@ -32,11 +32,11 @@ Değişkenleri ve fonksiyonları adlandırırken İngilizce dilini kullanın.
 ### Swift
 
 ```swift
-/* Bad */
+/* Kötü */
 let primerNombre = "Gustavo"
 let amigos = ["Kate", "John"]
 
-/* Good */
+/* İyi */
 let firstName = "Gustavo"
 let friends = ["Kate", "John"]
 ```
@@ -44,11 +44,11 @@ let friends = ["Kate", "John"]
 ### Kotlin
 
 ```kt
-/* Bad */
+/* Kötü */
 val primerNombre = "Gustavo"
 val amigos = listOf("Kate", "John")
 
-/* Good */
+/* İyi */
 val firstName = "Gustavo"
 val friends = listOf("Kate", "John")
 ```
@@ -62,15 +62,15 @@ Yalnızca **bir** tane isimlendirme kuralı seçin ve ona uyun. Bu, `camelCase`,
 ### Swift
 
 ```swift
-/* Bad */
+/* Kötü */
 let page_count = 5
 let shouldUpdate = true
 
-/* Good */
+/* İyi */
 let pageCount = 5
 let shouldUpdate = true
 
-/* Good as well */
+/* Ayrıca iyi */
 let page_count = 5
 let should_update = true
 ```
@@ -78,15 +78,15 @@ let should_update = true
 ### Kotlin
 
 ```kt
-/* Bad */
+/* Kötü */
 val page_count = 5
 val shouldUpdate = true
 
-/* Good */
+/* İyi */
 val pageCount = 5
 val shouldUpdate = true
 
-/* Good as well */
+/* Ayrıca iyi */
 val page_count = 5
 val should_update = true
 ```
@@ -102,12 +102,12 @@ Bir isim _kısa_, _sezgisel_ ve _açıklayıcı_ olmalıdır:
 ### Swift
 
 ```swift
-/* Bad */
+/* Kötü */
 let a = 5 // "a" herhangi bir şeyi ifade edebilir
 let isPaginatable = a > 10 // "Paginatable" son derece doğal bir şekilde okunmuyor
 let shouldPaginatize = a > 10 // Uydurma fiiller eğlenceli olabilir!
 
-/* Good */
+/* İyi */
 let postCount = 5
 let hasPagination = postCount > 10
 let shouldPaginate = postCount > 10 // alternatif olarak
@@ -116,27 +116,39 @@ let shouldPaginate = postCount > 10 // alternatif olarak
 ### Kotlin
 
 ```kt
-/* Bad */
+/* Kötü */
 val a = 5 // "a" herhangi bir şeyi ifade edebilir
 val isPaginatable = a > 10 // "Paginatable" son derece doğal bir şekilde okunmuyor
 val shouldPaginatize = a > 10 // Uydurma fiiller eğlenceli olabilir!
 
-/* Good */
+/* İyi */
 val postCount = 5
 val hasPagination = postCount > 10
 val shouldPaginate = postCount > 10 // alternatif olarak
 ```
 
-## Avoid contractions
+## Kısaltmalardan Kaçının
 
-Do **not** use contractions. They contribute to nothing but decreased readability of the code. Finding a short, descriptive name may be hard, but contraction is not an excuse for not doing so.
+Kısaltmaları **kullanmayın**. Kısaltmalar, kodun okunabilirliğini azaltmaktan başka bir işe yaramaz. Kısa ve açıklayıcı bir isim bulmak zor olabilir, ancak bunu yapmamak için kısaltma kullanmak bir bahane değildir.
 
-```js
-/* Bad */
-const onItmClk = () => {}
+### Swift
 
-/* Good */
-const onItemClick = () => {}
+```swift
+/* Kötü */
+let onItmClk = {}
+
+/* İyi */
+let onItemClick = {}
+```
+
+### Kotlin
+
+```kt
+/* Kötü */
+val onItmClk = {}
+
+/* İyi */
+val onItemClick = {}
 ```
 
 ## Avoid context duplication
