@@ -668,11 +668,11 @@ Bir ön ek gibi, değişken adları da tek bir değer veya birden çok değer ta
 #### Swift
 
 ```swift
-// Bad
+/* Kötü */
 let friends = "Bob"
 let friend = ["Bob", "Tony", "Tanya"]
 
-// Good
+/* İyi */
 let friend = "Bob"
 let friends = ["Bob", "Tony", "Tanya"]
 ```
@@ -680,11 +680,11 @@ let friends = ["Bob", "Tony", "Tanya"]
 #### Kotlin
 
 ```kt
-// Bad
+/* Kötü */
 val friends = "Bob"
 val friend = arrayOf("Bob", "Tony", "Tanya")
 
-// Good
+/* İyi */
 val friend = "Bob"
 val friends = arrayOf("Bob", "Tony", "Tanya")
 ```
