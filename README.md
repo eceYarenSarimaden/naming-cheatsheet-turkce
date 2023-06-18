@@ -16,7 +16,7 @@
   - [A/HC/LC deseni](#ahclc-deseni)
     - [Eylemler](#eylemler-actions)
     - [Bağlam (Context)](#bağlam-context)
-    - [Prefixes](#prefixes)
+    - [Ön ekler (Prefixes)](#ön-ekler-prefixes)
 - [Singular and Plurals](#singular-and-plurals)
 
 ---
@@ -521,21 +521,35 @@ fun getRecentPosts(posts: List<Post>): List<Post> {
 
 ---
 
-## Prefixes
+## Ön ekler (Prefixes)
 
-Prefix enhances the meaning of a variable. It is rarely used in function names.
+Ön ek, bir değişkenin anlamını güçlendirir. Genellikle değişken isimlerinde kulllanılır, fonksiyon isimlerindeyse nadiren kullanılır.
 
 ### `is`
 
-Describes a characteristic or state of the current context (usually `boolean`).
+Geçerli bağlamın (context) bir özelliğini veya durumunu açıklar (genellikle `boolean`).
 
-```js
-const color = 'blue'
-const isBlue = color === 'blue' // characteristic
-const isPresent = true // state
+#### Swift
+
+```swift
+let color = "blue"
+let isBlue = color == "blue" // özellik
+let isPresent = true // durum
+
+if isBlue && isPresent {
+    print("Mavi mevcut!")
+}
+```
+
+#### Kotlin
+
+```kt
+val color = "blue"
+val isBlue = color == "blue" // özellik
+val isPresent = true // durum
 
 if (isBlue && isPresent) {
-  console.log('Blue is present!')
+    println("Mavi mevcut!")
 }
 ```
 
