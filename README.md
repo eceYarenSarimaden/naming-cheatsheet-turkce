@@ -10,11 +10,11 @@
 - [Adlandırma kuralı](#adlandırma-kuralı)
 - [Kısa - Sezgisel - Açıklayıcı](#kısa---sezgisel---açıklayıcı)
 - [Kısaltmalardan kaçının](#kısaltmalardan-kaçının)
-- [İçeriğin tekrarlanmasından kaçının](#i̇çeriğin-tekrarlanmasından-kaçının)
+- [Bağlamın (Context) tekrarlanmasından kaçının](#bağlam-context-tekrarlanmasından-kaçının)
 - [Beklenen sonucu yansıtın](#beklenen-sonucu-yansıtın)
 - [Fonksiyonları adlandırmak](#fonksiyonları-adlandırmak)
   - [A/HC/LC deseni](#ahclc-deseni)
-    - [Eylemler](#eylemler)
+    - [Eylemler](#eylemler-actions)
     - [Bağlam (Context)](#bağlam-context)
     - [Prefixes](#prefixes)
 - [Singular and Plurals](#singular-and-plurals)
@@ -151,15 +151,15 @@ val onItmClk = {}
 val onItemClick = {}
 ```
 
-## İçeriğin Tekrarlanmasından Kaçının
+## Bağlam (Context) Tekrarlanmasından Kaçının
 
-Bir isim tanımlandığı içeriği tekrarlamamalıdır. Eğer bu ismin okunabilirliğini azaltmıyorsa, her zaman isimden ilgili içeriği kaldırın.
+Bir isim tanımlandığı bağlamı tekrarlamamalıdır. Eğer bağlamı kaldırmak ismin okunabilirliğini azaltmıyorsa, her zaman isimden ilgili bağlamı kaldırın.
 
 ### Swift
 
 ```swift
 class MenuItem {
-  /* Metot ismi içeriği ("MenuItem") tekrar eder */
+  /* Metot ismi, bağlamı ("MenuItem") tekrar eder */
   func handleMenuItemClick(event: Event) {
     . . .
   }
@@ -175,7 +175,7 @@ class MenuItem {
 
 ```kt
 class MenuItem {  
-  /* Metod ismi içeriği ("MenuItem") tekrar eder */
+  /* Metod ismi, bağlamı ("MenuItem") tekrar eder */
   fun handleMenuItemClick(event: Event) {
     . . .
   }
@@ -221,7 +221,11 @@ binding.button.isEnabled = isEnabled
 
 ## A/HC/LC Deseni
 
-Fonksiyonları adlandırırken izlenecek işe yarar bir desen vardır:
+Fonksiyonları adlandırırken kullanılabilecek işe yarar bir desen vardır:
+
+```
+ön ek? + eylem (A) + önemli bağlam (HC) + yardımcı bağlam? (LC)
+```
 
 ```
 prefix? + action (A) + high context (HC) + low context? (LC)
@@ -229,18 +233,18 @@ prefix? + action (A) + high context (HC) + low context? (LC)
 
 Aşağıdaki tabloda bu desenin nasıl uygulanabileceğine bir göz atın.
 
-| Name                   | Prefix   | Action (A) | High context (HC) | Low context (LC) |
+| İsim (Name)            | Ön ek (Prefix) | Eylem (A - Action) | Önemli bağlam (HC - High context) | Yardımcı bağlam (LC - Low context) |
 | ---------------------- | -------- | ---------- | ----------------- | ---------------- |
 | `getUser`              |          | `get`      | `User`            |                  |
 | `getUserMessages`      |          | `get`      | `User`            | `Messages`       |
 | `handleClickOutside`   |          | `handle`   | `Click`           | `Outside`        |
 | `shouldDisplayMessage` | `should` | `Display`  | `Message`         |                  |
 
-> **Not:** Bir değişkenin anlamını içeriğin sırası etkiler. Örneğin, `shouldUpdateComponent` ifadesi _sizin_ bir bileşeni güncellemek üzere olduğunuz anlamına gelirken, `shouldComponentUpdate` size _bileşenin kendisini_ güncelleyeceğini söyler ve yalnızca ne zaman güncellenmesi gerektiğini kontrol edersiniz. Başka bir deyişle, **`high context` bir değişkenin anlamını vurgular**.
+> **Not:** Bir değişkenin anlamını bağlamın sırası etkiler. Örneğin, `shouldUpdateComponent` ifadesi _sizin_ bir bileşeni güncellemek üzere olduğunuz anlamına gelirken, `shouldComponentUpdate` size _bileşenin kendisini_ güncelleyeceğini söyler ve yalnızca ne zaman güncellenmesi gerektiğini kontrol edersiniz. Başka bir deyişle, **`high context` bir değişkenin anlamını vurgular**.
 
 ---
 
-## Eylemler
+## Eylemler (Actions)
 
 Fonksiyon adının fiil kısmı. Fonksiyonun _ne yaptığını_ açıklayan en önemli kısımdır.
 
