@@ -14,10 +14,10 @@
 - [Beklenen sonucu yansıtın](#beklenen-sonucu-yansıtın)
 - [Fonksiyonları adlandırmak](#fonksiyonları-adlandırmak)
   - [A/HC/LC deseni](#ahclc-deseni)
-    - [Eylemler](#eylemler-actions)
+    - [Eylemler (Actions)](#eylemler-actions)
     - [Bağlam (Context)](#bağlam-context)
     - [Ön ekler (Prefixes)](#ön-ekler-prefixes)
-- [Singular and Plurals](#singular-and-plurals)
+- [Tekil ve Çoğul (Singular and Plurals)](#tekil-ve-çoğul-singular-and-plurals)
 
 ---
 
@@ -555,7 +555,7 @@ if (isBlue && isPresent) {
 
 ### `has`
 
-Geçerli bağlamın (context) belirli bir değere veya duruma (genellikle `Boolean`) sahip olup olmadığını açıklar.
+Mevcut bağlamın (context) belirli bir değere veya duruma (genellikle `Boolean`) sahip olup olmadığını açıklar.
 
 #### Swift
 
@@ -601,43 +601,88 @@ fun shouldUpdateUrl(url: String, expectedUrl: String): Boolean {
 
 ### `min`/`max`
 
-Represents a minimum or maximum value. Used when describing boundaries or limits.
+Minimum veya maksimum değeri temsil eder. Sınırları veya limitleri tanımlarken kullanılır.
 
-```js
+#### Swift
+
+```swift
 /**
- * Renders a random amount of posts within
- * the given min/max boundaries.
+ * Verilen min/max sınırları içinde
+ * rastgele bir miktarda gönderi oluşturur.
  */
-function renderPosts(posts, minPosts, maxPosts) {
-  return posts.slice(0, randomBetween(minPosts, maxPosts))
+func renderPosts(_ posts: [Post], minPosts: Int, maxPosts: Int) -> [Post] {
+    let randomCount = randomBetween(minPosts, maxPosts)
+    return Array(posts.prefix(randomCount))
+}
+```
+
+#### Kotlin
+
+```kt
+/**
+ * Verilen min/max sınırları içinde
+ * rastgele bir miktarda gönderi oluşturur.
+ */
+fun renderPosts(posts: List<Post>, minPosts: Int, maxPosts: Int): List<Post> {
+    val randomCount = randomBetween(minPosts, maxPosts)
+    return posts.subList(0, randomCount)
 }
 ```
 
 ### `prev`/`next`
 
-Indicate the previous or the next state of a variable in the current context. Used when describing state transitions.
+Mevcut bağlamda (context) bir değişkenin önceki veya sonraki durumunu belirtir. Durum (state) geçişlerini tanımlarken kullanılır.
 
-```jsx
-async function getPosts() {
-  const prevPosts = this.state.posts
+#### Swift
 
-  const latestPosts = await fetch('...')
-  const nextPosts = concat(prevPosts, latestPosts)
-
-  this.setState({ posts: nextPosts })
+```swift
+func getPosts() async {
+    let prevPosts = self.state.posts
+    
+    let latestPosts = await fetch("...")
+    let nextPosts = prevPosts + latestPosts
+    
+    self.setState(posts: nextPosts)
 }
 ```
 
-## Singular and Plurals
+#### Kotlin
 
-Like a prefix, variable names can be made singular or plural depending on whether they hold a single value or multiple values.
+```kt
+suspend fun getPosts() {
+    val prevPosts = state.posts
+    
+    val latestPosts = fetch("...")
+    val nextPosts = prevPosts + latestPosts
+    
+    setState(posts = nextPosts)
+}
+```
 
-```js
-/* Bad */
-const friends = 'Bob'
-const friend = ['Bob', 'Tony', 'Tanya']
+## Tekil ve Çoğul (Singular and Plurals)
 
-/* Good */
-const friend = 'Bob'
-const friends = ['Bob', 'Tony', 'Tanya']
+Bir ön ek gibi, değişken adları da tek bir değer veya birden çok değer taşımalarına bağlı olarak tekil veya çoğul yapılabilir.
+
+#### Swift
+
+```swift
+// Bad
+let friends = "Bob"
+let friend = ["Bob", "Tony", "Tanya"]
+
+// Good
+let friend = "Bob"
+let friends = ["Bob", "Tony", "Tanya"]
+```
+
+#### Kotlin
+
+```kt
+// Bad
+val friends = "Bob"
+val friend = arrayOf("Bob", "Tony", "Tanya")
+
+// Good
+val friend = "Bob"
+val friends = arrayOf("Bob", "Tony", "Tanya")
 ```
