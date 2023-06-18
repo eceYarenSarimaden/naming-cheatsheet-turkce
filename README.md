@@ -527,7 +527,7 @@ fun getRecentPosts(posts: List<Post>): List<Post> {
 
 ### `is`
 
-Geçerli bağlamın (context) bir özelliğini veya durumunu açıklar (genellikle `boolean`).
+Geçerli bağlamın (context) bir özelliğini veya durumunu açıklar (genellikle `Boolean`).
 
 #### Swift
 
@@ -555,24 +555,47 @@ if (isBlue && isPresent) {
 
 ### `has`
 
-Describes whether the current context possesses a certain value or state (usually `boolean`).
+Geçerli bağlamın (context) belirli bir değere veya duruma (genellikle `Boolean`) sahip olup olmadığını açıklar.
 
-```js
-/* Bad */
-const isProductsExist = productsCount > 0
-const areProductsPresent = productsCount > 0
+#### Swift
 
-/* Good */
-const hasProducts = productsCount > 0
+```swift
+/* Kötü */
+let isProductsExist = productsCount > 0
+let areProductsPresent = productsCount > 0
+
+/* İyi */
+let hasProducts = productsCount > 0
+```
+
+#### Kotlin
+
+```kt
+/* Kötü */
+val isProductsExist = productsCount > 0
+val areProductsPresent = productsCount > 0
+
+/* İyi */
+val hasProducts = productsCount > 0
 ```
 
 ### `should`
 
-Reflects a positive conditional statement (usually `boolean`) coupled with a certain action.
+Belirli bir eylemle birleştirilmiş pozitif bir koşullu ifadeyi (genellikle `Boolean`) yansıtır.
 
-```js
-function shouldUpdateUrl(url, expectedUrl) {
-  return url !== expectedUrl
+#### Swift
+
+```swift
+func shouldUpdateUrl(_ url: String, expectedUrl: String) -> Bool {
+    return url != expectedUrl
+}
+```
+
+#### Kotlin
+
+```kt
+fun shouldUpdateUrl(url: String, expectedUrl: String): Boolean {
+    return url != expectedUrl
 }
 ```
 
