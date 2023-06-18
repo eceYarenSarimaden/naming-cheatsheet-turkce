@@ -369,20 +369,33 @@ println(fruits) // 5
 
 ### `remove`
 
-Removes something _from_ somewhere.
+_Bir yerden_ bir şey çıkarır.
 
-For example, if you have a collection of selected filters on a search page, removing one of them from the collection is `removeFilter`, **not** `deleteFilter` (and this is how you would naturally say it in English as well):
+Örneğin, bir arama sayfasında seçili filtrelerden oluşan bir koleksiyonunuz varsa, bunlardan birini koleksiyondan kaldırmak, `deleteFilter` değil, `removeFilter`'dır (ve bunu doğal olarak İngilizce'de de böyle söylersiniz):
 
-```js
-function removeFilter(filterName, filters) {
-  return filters.filter((name) => name !== filterName)
+#### Swift
+
+```swift
+func removeFilter(_ filterName: String, _ filters: [String]) -> [String] {
+  return filters.filter { $0 != filterName }
 }
 
-const selectedFilters = ['price', 'availability', 'size']
-removeFilter('price', selectedFilters)
+var selectedFilters = ["price", "availability", "size"]
+selectedFilters = removeFilter("price", selectedFilters)
 ```
 
-> See also [delete](#delete).
+#### Kotlin
+
+```kt
+fun removeFilter(filterName: String, filters: MutableList<String>): List<String> {
+  return filters.filter { it != filterName }
+}
+
+var selectedFilters = mutableListOf("price", "availability", "size")
+selectedFilters = removeFilter("price", selectedFilters)
+```
+
+> Ayrıca bkz [delete](#delete).
 
 ### `delete`
 
