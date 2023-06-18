@@ -421,13 +421,13 @@ fun deletePost(id: Int) {
 
 > Ayrıca bkz [remove](#remove).
 
-> **`remove` or `delete`?**
+> **`remove` ve `delete` arasındaki fark ne?**
 >
-> When the difference between `remove` and `delete` is not so obvious to you, I'd suggest looking at their opposite actions - `add` and `create`.
-> The key difference between `add` and `create` is that `add` needs a destination while `create` **requires no destination**. You `add` an item _to somewhere_, but you don't "`create` it _to somewhere_".
-> Simply pair `remove` with `add` and `delete` with `create`.
+> `remove` ve `delete` arasındaki fark sizin için çok açık değilse, önerim bunların zıt eylemlerine, yani `add` ve `create`'e bakmanızdır.
+> `add` ve `create` arasındaki temel fark, `add`'in bir hedefe ihtiyaç duyması, ancak `create`'in **hiçbir hedef gerektirmemesidir**. Bir öğeyi _bir yere_ eklersiniz (add), ancak onu _bir yere_ "oluşturmazsınız (create)".
+> Basitçe `remove`'u `add` ile, `delete`'i `create` ile eşleştirin.
 >
-> Explained in detail [here](https://github.com/kettanaito/naming-cheatsheet/issues/74#issue-1174942962).
+> [Burada](https://github.com/kettanaito/naming-cheatsheet/issues/74#issue-1174942962) ayrıntılı olarak açıklanmıştır.
 
 ### `compose`
 
