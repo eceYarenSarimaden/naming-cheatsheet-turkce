@@ -399,17 +399,27 @@ selectedFilters = removeFilter("price", selectedFilters)
 
 ### `delete`
 
-Completely erases something from the realms of existence.
+Bir şeyi varlık aleminden tamamen siler.
 
-Imagine you are a content editor, and there is that notorious post you wish to get rid of. Once you clicked a shiny "Delete post" button, the CMS performed a `deletePost` action, **not** `removePost`.
+Bir içerik editörü olduğunuzu ve kurtulmak istediğiniz kötü şöhretli bir gönderi olduğunu hayal edin. Parlak bir "Gönderiyi sil" butonuna tıkladığınızda, CMS bir `deletePost` eylemi gerçekleştirir, `removePost` **değil**.
 
-```js
-function deletePost(id) {
-  return database.find({ id }).delete()
+#### Swift
+
+```swift
+func deletePost(id: Int) {
+    database.find { $0.id == id }?.delete()
 }
 ```
 
-> See also [remove](#remove).
+#### Kotlin
+
+```kt
+fun deletePost(id: Int) {
+    database.find { it.id == id }?.delete()
+}
+```
+
+> Ayrıca bkz [remove](#remove).
 
 > **`remove` or `delete`?**
 >
