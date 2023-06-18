@@ -15,7 +15,7 @@
 - [Fonksiyonları adlandırmak](#fonksiyonları-adlandırmak)
   - [A/HC/LC deseni](#ahclc-deseni)
     - [Eylemler](#eylemler)
-    - [Context](#context)
+    - [Bağlam (Context)](#bağlam-context)
     - [Prefixes](#prefixes)
 - [Singular and Plurals](#singular-and-plurals)
 
@@ -431,49 +431,89 @@ fun deletePost(id: Int) {
 
 ### `compose`
 
-Creates new data from the existing one. Mostly applicable to strings, objects, or functions.
+Mevcut olan verilerden yeni veriler oluşturur. Çoğunlukla String'lere, nesnelere veya fonksiyonlara uygulanabilir.
 
-```js
-function composePageUrl(pageName, pageId) {
-  return pageName.toLowerCase() + '-' + pageId
+#### Swift
+
+```swift
+func composePageUrl(pageName: String, pageId: String) -> String {
+    return pageName.lowercased() + "-" + pageId
 }
 ```
 
-> See also [get](#get).
+#### Kotlin
+
+```kt
+fun composePageUrl(pageName: String, pageId: String): String {
+    return pageName.toLowerCase() + "-" + pageId
+}
+```
+
+> Ayrıca bkz [get](#get).
 
 ### `handle`
 
-Handles an action. Often used when naming a callback method.
+Bir eylemi yönetir. Genellikle bir callback fonksiyonlarını adlandırırken kullanılır.
 
-```js
-function handleLinkClick() {
-  console.log('Clicked a link!')
+#### Swift
+
+```swift
+func handleLinkClick() {
+    print("Clicked a link!")
 }
 
-link.addEventListener('click', handleLinkClick)
+link.addTarget(self, action: #selector(handleLinkClick), for: .touchUpInside)
+```
+
+#### Kotlin
+
+```kt
+fun handleLinkClick() {
+    println("Clicked a link!")
+}
+
+link.setOnClickListener { handleLinkClick() }
 ```
 
 ---
 
-## Context
+## Bağlam (Context)
 
-A domain that a function operates on.
+Bir fonksiyonun üzerinde çalıştığı etki alanını temsil eder.
 
-A function is often an action on _something_. It is important to state what its operable domain is, or at least an expected data type.
+Bir fonksiyon genellikle _bir şey_ üzerindeki bir eylemdir. Fonksiyonun etki alanının ne olduğunu ya da en azından beklenen veri türünü belirtmek önemlidir.
 
-```js
-/* A pure function operating with primitives */
-function filter(list, predicate) {
-  return list.filter(predicate)
+#### Swift
+
+```swift
+// Primitif/İlkel tiplerle çalışan sade bir fonksiyon
+func filter<T>(_ list: [T], _ predicate: (T) -> Bool) -> [T] {
+    return list.filter(predicate)
 }
 
-/* Function operating exactly on posts */
-function getRecentPosts(posts) {
-  return filter(posts, (post) => post.date === Date.now())
+// Tam olarak gönderiler üzerinde işlem yapan bir fonksiyon
+func getRecentPosts(_ posts: [Post]) -> [Post] {
+    let currentDate = Date()
+    return filter(posts) { $0.date == currentDate }
 }
 ```
 
-> Some language-specific assumptions may allow omitting the context. For example, in JavaScript, it's common that `filter` operates on Array. Adding explicit `filterArray` would be unnecessary.
+#### Kotlin
+
+```kt
+// Primitif/İlkel tiplerle çalışan sade bir fonksiyon
+fun <T> filter(list: List<T>, predicate: (T) -> Boolean): List<T> {
+    return list.filter(predicate)
+}
+
+// Tam olarak gönderiler üzerinde işlem yapan bir fonksiyon
+fun getRecentPosts(posts: List<Post>): List<Post> {
+    val currentDate = Date()
+    return filter(posts) { it.date == currentDate }
+}
+```
+
+> Dile özgü bazı varsayımlar, bağlamı (context) atlamayı mümkün kılabilir. Örneğin, JavaScript'te filtreleme işleminin bir diziye (array) yapılması yaygın bir durumdur. Bu yüzden `filter` yerine `filterArray` yazmak gereksiz olacaktır.
 
 ---
 
