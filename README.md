@@ -1,6 +1,8 @@
 <p align="center">
   <a href="https://github.com/kettanaito/naming-cheatsheet">
+    <img src="https://github.com/kettanaito/naming-cheatsheet/assets/46245749/468e4f15-f605-43b8-a551-d041353c7801" alt="Swift language" width="20%" />
     <img src="./naming-cheatsheet.png" alt="Naming cheatsheet" />
+    <img src="https://github.com/kettanaito/naming-cheatsheet/assets/46245749/0198a889-c6ab-4385-9004-08210bbdbade" alt="Kotlin language" width="20%" />
   </a>
 </p>
 
@@ -53,7 +55,7 @@ val firstName = "Gustavo"
 val friends = listOf("Kate", "John")
 ```
 
-> Beğenseniz de beğenmeseniz de, İngilizce programlamada egemen bir dil olarak kabul edilmektedir: Tüm programlama dillerinin sözdizimi(syntax) İngilizce olarak yazılır, ayrıca sayısız dokümantasyon ve eğitim materyali de İngilizce olarak hazırlanmıştır. Kodunuzu İngilizce olarak yazarak, kodunuzun bütünlüğünü büyük ölçüde artırırsınız.
+> Beğenseniz de beğenmeseniz de, İngilizce programlamada egemen bir dil olarak kabul edilmektedir: Tüm programlama dillerinin sözdizimi (syntax) İngilizce olarak yazılır, ayrıca sayısız dokümantasyon ve eğitim materyali de İngilizce olarak hazırlanmıştır. Kodunuzu İngilizce olarak yazarak, kodunuzun bütünlüğünü büyük ölçüde artırırsınız.
 
 ## Adlandırma kuralı
 
