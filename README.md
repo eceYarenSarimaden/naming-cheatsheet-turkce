@@ -71,10 +71,6 @@ let shouldUpdate = true
 /* İyi */
 let pageCount = 5
 let shouldUpdate = true
-
-/* Ayrıca iyi */
-let page_count = 5
-let should_update = true
 ```
 
 ### Kotlin
@@ -87,10 +83,6 @@ val shouldUpdate = true
 /* İyi */
 val pageCount = 5
 val shouldUpdate = true
-
-/* Ayrıca iyi */
-val page_count = 5
-val should_update = true
 ```
 
 ## Kısa - Sezgisel - Açıklayıcı
@@ -137,41 +129,25 @@ Kısaltmaları **kullanmayın**. Kısaltmalar, kodun okunabilirliğini azaltmakt
 
 ```swift
 /* Kötü */
-let onItmClk = {}
+let btnTpd = {}
 
 /* İyi */
-let onItemClick = {}
+let buttonTapped = {}
 ```
 
 ### Kotlin
 
 ```kt
 /* Kötü */
-val onItmClk = {}
+val onBtnClk = {}
 
 /* İyi */
-val onItemClick = {}
+val onButtonClick = {}
 ```
 
 ## Bağlam (Context) Tekrarlanmasından Kaçının
 
 Bir isim tanımlandığı bağlamı tekrarlamamalıdır. Eğer bağlamı kaldırmak ismin okunabilirliğini azaltmıyorsa, her zaman isimden ilgili bağlamı kaldırın.
-
-### Swift
-
-```swift
-class MenuItem {
-  /* Metot ismi, bağlamı ("MenuItem") tekrar eder */
-  func handleMenuItemClick(event: Event) {
-    . . .
-  }
-  
-  /* `MenuItem().handleClick()` olarak güzel bir şekilde okunur */
-  func handleClick(event: Event) {
-    . . .
-  }
-}
-```
 
 ### Kotlin
 
@@ -464,11 +440,11 @@ Bir eylemi yönetir. Genellikle bir callback fonksiyonlarını adlandırırken k
 #### Swift
 
 ```swift
-func handleLinkClick() {
-    print("Clicked a link!")
+func handleLinkTapped() {
+    print("Tapped a link!")
 }
 
-link.addTarget(self, action: #selector(handleLinkClick), for: .touchUpInside)
+link.addTarget(self, action: #selector(handleLinkTapped), for: .touchUpInside)
 ```
 
 #### Kotlin
@@ -613,7 +589,7 @@ Minimum veya maksimum değeri temsil eder. Sınırları veya limitleri tanımlar
  * rastgele bir miktarda gönderi oluşturur.
  */
 func renderPosts(_ posts: [Post], minPosts: Int, maxPosts: Int) -> [Post] {
-    let randomCount = randomBetween(minPosts, maxPosts)
+    let randomCount = Int.random(in: minPostCount..<maxPostCount)
     return Array(posts.prefix(randomCount))
 }
 ```
@@ -644,7 +620,7 @@ func getPosts() async {
     let latestPosts = await fetch("...")
     let nextPosts = prevPosts + latestPosts
     
-    self.setState(posts: nextPosts)
+    self.setState(by posts: nextPosts)
 }
 ```
 
