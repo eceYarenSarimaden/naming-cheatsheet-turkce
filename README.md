@@ -660,7 +660,7 @@ let friends = ["Bob", "Tony", "Tanya"]
 /* Kötü */
 val friends = "Bob"
 val friend = arrayOf("Bob", "Tony", "Tanya")
-let friendList = arrayOf("Bob", "Tony", "Tanya") // "friendList" yerine "friends" kullanın.
+val friendList = arrayOf("Bob", "Tony", "Tanya") // "friendList" yerine "friends" kullanın.
 
 /* İyi */
 val friend = "Bob"
