@@ -433,6 +433,31 @@ fun handleLinkClick() {
 link.setOnClickListener { handleLinkClick() }
 ```
 
+### `will`
+
+#### Swift
+
+```swift
+func applicationWillTerminate() {
+    ...
+}
+```
+
+> Android'de `will` ön eki yerine genellikle `on` kullanılır.
+
+#### Kotlin
+
+```kt
+override fun onDestroy() {
+  super.onDestroy()
+  // Activity yok edilmeden önce çalışacak kodlar buraya yazılır.
+}
+
+fun onItemClick() {
+  ...
+}
+```
+
 ---
 
 ## Bağlam (Context)
@@ -550,31 +575,6 @@ func shouldUpdateUrl(_ url: String, expectedUrl: String) -> Bool {
 ```kt
 fun shouldUpdateUrl(url: String, expectedUrl: String): Boolean {
     return url != expectedUrl
-}
-```
-
-### 'will'
-
-### Swift
-
-```swift
-func applicationWillTerminate() {
-    ...
-}
-```
-
-> Android'de `will` ön eki yerine genellikle `on` kullanılır.
-
-### Kotlin
-
-```kt
-override fun onDestroy() {
-  super.onDestroy()
-  // Activity yok edilmeden önce çalışacak kodlar buraya yazılır.
-}
-
-fun onItemClick() {
-  ...
 }
 ```
 
