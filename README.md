@@ -480,26 +480,6 @@ fun handleLinkClick() {
 link.setOnClickListener { handleLinkClick() }
 ```
 
-### `on`
-
-`on` ön eki, onDataReceived (veri alındığında), onErrorOccurred (hata oluştuğunda) gibi bir olayın gerçekleştiği veya bir durumun olduğu zamanı veya noktayı belirten fonksiyonlarda kullanılan yaygın bir ön ektir.
-
-#### Swift
-
-```swift
-func onLocationUpdated() {
-    ...
-}
-```
-
-#### Kotlin
-
-```kt
-fun onItemClick() {
-  ...
-}
-```
-
 ---
 
 ## Bağlam (Context)
@@ -617,6 +597,26 @@ func shouldUpdateUrl(_ url: String, expectedUrl: String) -> Bool {
 ```kt
 fun shouldUpdateUrl(url: String, expectedUrl: String): Boolean {
     return url != expectedUrl
+}
+```
+
+### `on`
+
+`on` ön eki, onDataReceived (veri alındığında), onErrorOccurred (hata oluştuğunda) gibi bir olayın gerçekleştiği veya bir durumun olduğu zamanı veya noktayı belirten fonksiyonlarda kullanılan yaygın bir ön ektir.
+
+#### Swift
+
+```swift
+func onLocationUpdated() {
+    ...
+}
+```
+
+#### Kotlin
+
+```kt
+fun onItemClick() {
+  ...
 }
 ```
 
