@@ -692,6 +692,24 @@ fun goToNextPage() {
 }
 ```
 
+### `calculate`
+
+Herhangi bir matematiksel işlemi hesaplamak için kullanılabilir.
+
+#### Swift
+
+```swift
+func calculateSum(of numbers: [Int]) -> Int {
+    return numbers.reduce(0, +)
+}
+```
+
+```kt
+fun calculateSum(numbers: List<Int>): Int {
+    return numbers.reduce { acc, num -> acc + num }
+}
+```
+
 ## Tekil ve Çoğul (Singular and Plurals)
 
 Bir ön ek gibi, değişken adları da tek bir değer veya birden çok değer taşımalarına bağlı olarak tekil veya çoğul yapılabilir.
