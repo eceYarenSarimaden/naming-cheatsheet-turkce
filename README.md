@@ -510,24 +510,22 @@ Geçerli bağlamın (context) bir özelliğini veya durumunu açıklar (genellik
 #### Swift
 
 ```swift
-let color = "blue"
-let isBlue = color == "blue" // özellik
-let isPresent = true // durum
+let product = "shirt"
+let isFavorite = true // özellik
 
-if isBlue && isPresent {
-    print("Mavi mevcut!")
+if isFavorite {
+    ...
 }
 ```
 
 #### Kotlin
 
 ```kt
-val color = "blue"
-val isBlue = color == "blue" // özellik
-val isPresent = true // durum
+val product = "shirt"
+val isFavorite = true // özellik
 
-if (isBlue && isPresent) {
-    println("Mavi mevcut!")
+if (isFavorite) {
+    ...
 }
 ```
 
