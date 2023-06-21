@@ -615,26 +615,88 @@ Mevcut bağlamda (context) bir değişkenin önceki veya sonraki durumunu belirt
 #### Swift
 
 ```swift
-func getPosts() async {
-    let prevPosts = self.state.posts
+var currentPage: Int = 0
+var prevPage: Int?
+var nextPage: Int?
+
+func fetchPageData() {
+    // Belirli bir sayfadan verileri almak için API çağrısı yapılır.
+    // Örneğin, currentPage değişkeni kullanılarak API'ye istek gönderilir.
     
-    let latestPosts = await fetch("...")
-    let nextPosts = prevPosts + latestPosts
+    // API'den veri alındıktan sonra prevPage ve nextPage değerleri güncellenir.
     
-    self.setState(by posts: nextPosts)
+    // Örnek olarak, prevPage ve nextPage değerleri güncellendiğinde bir işlem yapılabilir.
+    if let previousPage = prevPage {
+        // Önceki sayfaya geçilebilir, örneğin geri butonu etkinleştirilebilir.
+    } else {
+        // Önceki sayfa yok, geri butonu devre dışı bırakılabilir.
+    }
+    
+    if let nextPage = nextPage {
+        // Sonraki sayfaya geçilebilir, örneğin ileri butonu etkinleştirilebilir.
+    } else {
+        // Sonraki sayfa yok, ileri butonu devre dışı bırakılabilir.
+    }
+    
+    // Alınan verileri kullanıcı arayüzünde göstermek veya başka işlemler yapmak için kullanılabilir.
+}
+
+func goToPreviousPage() {
+    if let previousPage = prevPage {
+        currentPage = previousPage
+        fetchPageData()
+    }
+}
+
+func goToNextPage() {
+    if let nextPage = nextPage {
+        currentPage = nextPage
+        fetchPageData()
+    }
 }
 ```
 
 #### Kotlin
 
 ```kt
-suspend fun getPosts() {
-    val prevPosts = state.posts
+var currentPage: Int = 0
+var prevPage: Int? = null
+var nextPage: Int? = null
+
+fun fetchPageData() {
+    // Belirli bir sayfadan verileri almak için API çağrısı yapılır.
+    // Örneğin, currentPage değişkeni kullanılarak API'ye istek gönderilir.
     
-    val latestPosts = fetch("...")
-    val nextPosts = prevPosts + latestPosts
+    // API'den veri alındıktan sonra prevPage ve nextPage değerleri güncellenir.
     
-    setState(posts = nextPosts)
+    // Örnek olarak, prevPage ve nextPage değerleri güncellendiğinde bir işlem yapılabilir.
+    if (prevPage != null) {
+        // Önceki sayfaya geçilebilir, örneğin geri butonu etkinleştirilebilir.
+    } else {
+        // Önceki sayfa yok, geri butonu devre dışı bırakılabilir.
+    }
+    
+    if (nextPage != null) {
+        // Sonraki sayfaya geçilebilir, örneğin ileri butonu etkinleştirilebilir.
+    } else {
+        // Sonraki sayfa yok, ileri butonu devre dışı bırakılabilir.
+    }
+    
+    // Alınan verileri kullanıcı arayüzünde göstermek veya başka işlemler yapmak için kullanılabilir.
+}
+
+fun goToPreviousPage() {
+    if (prevPage != null) {
+        currentPage = prevPage!!
+        fetchPageData()
+    }
+}
+
+fun goToNextPage() {
+    if (nextPage != null) {
+        currentPage = nextPage!!
+        fetchPageData()
+    }
 }
 ```
 
