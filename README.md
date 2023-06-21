@@ -647,6 +647,7 @@ Bir ön ek gibi, değişken adları da tek bir değer veya birden çok değer ta
 /* Kötü */
 let friends = "Bob"
 let friend = ["Bob", "Tony", "Tanya"]
+let friendList = ["Bob", "Tony", "Tanya"] // "friendList" yerine "friends" kullanın.
 
 /* İyi */
 let friend = "Bob"
@@ -659,6 +660,7 @@ let friends = ["Bob", "Tony", "Tanya"]
 /* Kötü */
 val friends = "Bob"
 val friend = arrayOf("Bob", "Tony", "Tanya")
+let friendList = arrayOf("Bob", "Tony", "Tanya") // "friendList" yerine "friends" kullanın.
 
 /* İyi */
 val friend = "Bob"
