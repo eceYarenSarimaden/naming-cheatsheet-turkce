@@ -585,26 +585,18 @@ Minimum veya maksimum değeri temsil eder. Sınırları veya limitleri tanımlar
 #### Swift
 
 ```swift
-/**
- * Verilen min/max sınırları içinde
- * rastgele bir miktarda gönderi oluşturur.
- */
-func renderPosts(_ posts: [Post], minPosts: Int, maxPosts: Int) -> [Post] {
-    let randomCount = Int.random(in: minPostCount..<maxPostCount)
-    return Array(posts.prefix(randomCount))
+// Belirli bir aralıkta rastgele bir sayı oluşturan fonksiyon.
+func generateRandomNumberInRange(minNumber: Int, maxNumber: Int) -> Int {
+    return Int.random(in: minNumber...maxNumber)
 }
 ```
 
 #### Kotlin
 
 ```kt
-/**
- * Verilen min/max sınırları içinde
- * rastgele bir miktarda gönderi oluşturur.
- */
-fun renderPosts(posts: List<Post>, minPosts: Int, maxPosts: Int): List<Post> {
-    val randomCount = randomBetween(minPosts, maxPosts)
-    return posts.subList(0, randomCount)
+// Belirli bir aralıkta rastgele bir sayı oluşturan fonksiyon.
+fun generateRandomNumberInRange(minNumber: Int, maxNumber: Int): Int {
+    return (minNumber..maxNumber).random()
 }
 ```
 
