@@ -149,18 +149,63 @@ val onButtonClick = {}
 
 Bir isim tanımlandığı bağlamı tekrarlamamalıdır. Eğer bağlamı kaldırmak ismin okunabilirliğini azaltmıyorsa, isimden ilgili bağlamı kaldırın.
 
-### Kotlin
+### Swift
 
-```kt
-class MenuItem {  
-  /* Metod ismi, bağlamı ("MenuItem") tekrar eder */
-  fun handleMenuItemClick(event: Event) {
-    . . .
+```swift
+class Product {
+  let name: String
+  var isFavorite: Bool
+  
+  init(name: String, isFavorite: Bool = false) {
+    self.name = name
+    self.isFavorite = isFavorite
   }
 
-  /* `MenuItem().handleClick()` olarak güzel bir şekilde okunur */
-  fun handleClick(event: Event) {
-    . . .
+  // Fonksiyonun ismi, bağlamı (Product) tekrar eder.
+  func func setProductAsFavorite() {
+    isFavorite.toggle()
+    if isFavorite {
+      print("\(name) is added to favorites.")
+    } else {
+      print("\(name) is removed from favorites.")
+    }
+  }
+
+  // Çağrıldığı yerde `Product(name: "iPhone 14 Pro").setAsFavorite()` olarak güzelce okunur.
+  func setAsFavorite() {
+    isFavorite.toggle()
+    if isFavorite {
+      print("\(name) is added to favorites.")
+    } else {
+      print("\(name) is removed from favorites.")
+    }
+  }
+}
+```
+
+### Kotlin
+
+```kotlin
+class Product(val name: String, var isFavorite: Boolean = false) {
+
+  // Fonksiyonun ismi, bağlamı (Product) tekrar eder.
+  fun setProductAsFavorite() {
+    isFavorite = !isFavorite
+    if (isFavorite) {
+      println("$name is added to favorites.")
+    } else {
+      println("$name is removed from favorites.")
+    }
+  }
+
+  // Çağrıldığı yerde `Product(name: "iPhone 14 Pro").setAsFavorite()` olarak güzelce okunur.
+  fun setAsFavorite() {
+    isFavorite = !isFavorite
+    if (isFavorite) {
+      println("$name is added to favorites.")
+    } else {
+      println("$name is removed from favorites.")
+    }
   }
 }
 ```
