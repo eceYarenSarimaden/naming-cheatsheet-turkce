@@ -482,15 +482,11 @@ link.setOnClickListener { handleLinkClick() }
 
 ### `on`
 
-`on` ön eki, onButtonTap (düğmeye tıklanma), onDataReceived (veri alındığında), onErrorOccurred (hata oluştuğunda) gibi bir olayın gerçekleştiği veya bir durumun olduğu zamanı veya noktayı belirten fonksiyonlarda kullanılan yaygın bir ön ektir.
+`on` ön eki, onDataReceived (veri alındığında), onErrorOccurred (hata oluştuğunda) gibi bir olayın gerçekleştiği veya bir durumun olduğu zamanı veya noktayı belirten fonksiyonlarda kullanılan yaygın bir ön ektir.
 
 #### Swift
 
 ```swift
-func onButtonTapped() {
-    ...
-}
-
 func onLocationUpdated() {
     ...
 }
@@ -501,11 +497,6 @@ func onLocationUpdated() {
 ```kt
 fun onItemClick() {
   ...
-}
-
-override fun onDestroy() {
-  super.onDestroy()
-  // Activity yok edilmeden önce çalışacak kodlar buraya yazılır.
 }
 ```
 
