@@ -64,11 +64,11 @@ Yalnızca **bir** tane adlandırma kuralı seçin ve onunla devam edin. Bu, `cam
 ### Swift
 
 ```swift
-/* Kötü */
+// Değişken tanımlamak için iki farklı kural kullanılmış, tutarlı değil.
 let page_count = 5
 let shouldUpdate = true
 
-/* İyi */
+// Tutarlı
 let pageCount = 5
 let shouldUpdate = true
 ```
@@ -76,13 +76,22 @@ let shouldUpdate = true
 ### Kotlin
 
 ```kt
-/* Kötü */
+// Değişken tanımlamak için iki farklı kural kullanılmış, tutarlı değil.
 val page_count = 5
 val shouldUpdate = true
 
-/* İyi */
+// Tutarlı
 val pageCount = 5
 val shouldUpdate = true
+```
+
+> Ayrıca bir çok Android projesinde bir XML öğesine ID verirken `snake_case`
+```xml
+<TextView android:id="@+id/text_view_e_mail />
+```
+> ya da sabit değerleri tanımlarken `UPPER_SNAKE_CASE` kullanıldığını da görebilirsiniz.
+```kotlin
+const val DEFAULT_PAGE_SIZE = 20
 ```
 
 ## Kısa - Sezgisel - Açıklayıcı
@@ -145,7 +154,7 @@ val onBtnClk = {}
 val onButtonClick = {}
 ```
 
-## Bağlam (Context) Tekrarlanmasından Kaçının
+## Bağlamın (Context) Tekrarlanmasından Kaçının
 
 Bir isim tanımlandığı bağlamı tekrarlamamalıdır. Eğer bağlamı kaldırmak ismin okunabilirliğini azaltmıyorsa, isimden ilgili bağlamı kaldırın.
 
@@ -165,9 +174,9 @@ class Product {
   func func setProductAsFavorite() {
     isFavorite.toggle()
     if isFavorite {
-      print("\(name) is added to favorites.")
+      print("\(name) favorilere eklendi.")
     } else {
-      print("\(name) is removed from favorites.")
+      print("\(name) favorilerden çıkarıldı.")
     }
   }
 
@@ -175,9 +184,9 @@ class Product {
   func setAsFavorite() {
     isFavorite.toggle()
     if isFavorite {
-      print("\(name) is added to favorites.")
+      print("\(name) favorilere eklendi.")
     } else {
-      print("\(name) is removed from favorites.")
+      print("\(name) favorilerden çıkarıldı.")
     }
   }
 }
@@ -192,19 +201,19 @@ class Product(val name: String, var isFavorite: Boolean = false) {
   fun setProductAsFavorite() {
     isFavorite = !isFavorite
     if (isFavorite) {
-      println("$name is added to favorites.")
+      println("$name favorilere eklendi.")
     } else {
-      println("$name is removed from favorites.")
+      println("$name favorilerden çıkarıldı.")
     }
   }
 
-  // Çağrıldığı yerde `Product(name: "iPhone 14 Pro").setAsFavorite()` olarak güzelce okunur.
+  // Çağrıldığı yerde `Product(name = "iPhone 14 Pro").setAsFavorite()` olarak güzelce okunur.
   fun setAsFavorite() {
     isFavorite = !isFavorite
     if (isFavorite) {
-      println("$name is added to favorites.")
+      println("$name favorilere eklendi.")
     } else {
-      println("$name is removed from favorites.")
+      println("$name favorilerden çıkarıldı.")
     }
   }
 }
