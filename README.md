@@ -435,7 +435,7 @@ link.setOnClickListener { handleLinkClick() }
 
 ### `will`
 
-#### Swift
+#### Swift
 
 ```swift
 func applicationWillTerminate() {
@@ -445,7 +445,7 @@ func applicationWillTerminate() {
 
 > Android'de `will` ön eki yerine genellikle `on` kullanılır.
 
-#### Kotlin
+#### Kotlin
 
 ```kt
 override fun onDestroy() {
