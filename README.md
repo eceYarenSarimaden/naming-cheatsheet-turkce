@@ -704,6 +704,8 @@ func calculateSum(of numbers: [Int]) -> Int {
 }
 ```
 
+#### Kotlin
+
 ```kt
 fun calculateSum(numbers: List<Int>): Int {
     return numbers.reduce { acc, num -> acc + num }
