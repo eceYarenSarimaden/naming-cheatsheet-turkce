@@ -246,8 +246,6 @@ fun getFruitCount(): Int {
 }
 ```
 
-> Ayrıca bkz [compose](#compose).
-
 Asenkron işlemler gerçekleştirirken de `get`'i kullanabilirsiniz:
 
 #### Swift
@@ -410,28 +408,6 @@ fun deletePost(id: Int) {
 > Basitçe `remove`'u `add` ile, `delete`'i `create` ile eşleştirin.
 >
 > [Burada](https://github.com/kettanaito/naming-cheatsheet/issues/74#issue-1174942962) ayrıntılı olarak açıklanmıştır.
-
-### `compose`
-
-Mevcut olan verilerden yeni veriler oluşturur. Çoğunlukla String'lere, nesnelere veya fonksiyonlara uygulanabilir.
-
-#### Swift
-
-```swift
-func composePageUrl(pageName: String, pageId: String) -> String {
-    return pageName.lowercased() + "-" + pageId
-}
-```
-
-#### Kotlin
-
-```kt
-fun composePageUrl(pageName: String, pageId: String): String {
-    return pageName.toLowerCase() + "-" + pageId
-}
-```
-
-> Ayrıca bkz [get](#get).
 
 ### `handle`
 
