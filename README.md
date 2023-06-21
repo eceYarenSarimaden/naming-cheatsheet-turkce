@@ -712,6 +712,53 @@ fun calculateSum(numbers: List<Int>): Int {
 }
 ```
 
+### `show`
+
+Herhangi bir View öğesini ekranda görünür yapmak için kullanılabilir.
+
+#### Swift
+
+```swift
+func showActivityIndicator() {
+  ...
+}
+```
+
+#### Kotlin
+
+```kt
+fun showLoading() {
+  ...
+}
+```
+
+### `hide`
+
+Herhangi bir View öğesini gizlemek için kullanılabilir.
+
+#### Swift
+
+```swift
+extension UIViewController {
+  func hideKeyboardWhenTappedAround() {
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+    view.addGestureRecognizer(tap)
+  }
+
+  func dismissKeyboard() {
+    view.endEditing(true)
+  }
+}
+```
+
+#### Kotlin
+
+```kt
+fun hideCancelButton() {
+  binding.buttonCancel.visibility = View.GONE
+}
+```
+
 ## Tekil ve Çoğul (Singular and Plurals)
 
 Bir ön ek gibi, değişken adları da tek bir değer veya birden çok değer taşımalarına bağlı olarak tekil veya çoğul yapılabilir.
