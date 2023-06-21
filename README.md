@@ -510,8 +510,9 @@ Geçerli bağlamın (context) bir özelliğini veya durumunu açıklar (genellik
 #### Swift
 
 ```swift
-let product = "shirt"
-let isFavorite = true // özellik
+struct Product {
+  let isFavorite: Bool = false // özellik
+}
 
 if isFavorite {
     ...
@@ -521,8 +522,9 @@ if isFavorite {
 #### Kotlin
 
 ```kt
-val product = "shirt"
-val isFavorite = true // özellik
+data class Product(
+  val isFavorite: Boolean = false // özellik
+)
 
 if (isFavorite) {
     ...
