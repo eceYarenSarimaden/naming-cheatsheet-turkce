@@ -553,6 +553,31 @@ fun shouldUpdateUrl(url: String, expectedUrl: String): Boolean {
 }
 ```
 
+### 'will'
+
+### Swift
+
+```swift
+func applicationWillTerminate() {
+    ...
+}
+```
+
+> Android'de `will` ön eki yerine genellikle `on` kullanılır.
+
+### Kotlin
+
+```kt
+override fun onDestroy() {
+  super.onDestroy()
+  // Activity yok edilmeden önce çalışacak kodlar buraya yazılır.
+}
+
+fun onItemClick() {
+  ...
+}
+```
+
 ### `min`/`max`
 
 Minimum veya maksimum değeri temsil eder. Sınırları veya limitleri tanımlarken kullanılır.
