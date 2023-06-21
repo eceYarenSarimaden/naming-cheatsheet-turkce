@@ -23,7 +23,7 @@
 
 ---
 
-Bir şeylere isim vermek zordur. Bu döküman, bu süreci daha kolay hale getirmeyi amaçlıyor.
+Zaman zaman bir şeylere isim vermek zor olabilir. Bu döküman, bu süreci daha kolay hale getirmeyi amaçlıyor.
 
 Bu öneriler herhangi bir programlama dilinde uygulanabilir olsa da, bunları pratikte göstermek için Swift ve Kotlin'i kullanacağım.
 
@@ -59,7 +59,7 @@ val friends = listOf("Kate", "John")
 
 ## Adlandırma kuralı
 
-Yalnızca **bir** tane isimlendirme kuralı seçin ve ona uyun. Bu, `camelCase`, `PascalCase`, `snake_case` veya başka bir şey olabilir, önemli olan tutarlı olmasıdır. Birçok programlama dilinin kendi isimlendirme kuralları vardır; kullandığınız programlama dilinin dokümanlarını kontrol edin veya GitHub'da popüler olan projeleri inceleyin!
+Yalnızca **bir** tane adlandırma kuralı seçin ve onunla devam edin. Bu, `camelCase`, `PascalCase`, `snake_case` veya başka bir şey olabilir, önemli olan tutarlı olmasıdır. Birçok programlama dilinin kendi isimlendirme kuralları vardır; bunları öğrenmek için kullandığınız programlama dilinin dokümanlarını kontrol edin veya GitHub'da popüler olan projeleri inceleyin!
 
 ### Swift
 
@@ -97,33 +97,33 @@ Bir isim _kısa_, _sezgisel_ ve _açıklayıcı_ olmalıdır:
 
 ```swift
 /* Kötü */
-let a = 5 // "a" herhangi bir şeyi ifade edebilir
-let isPaginatable = a > 10 // "Paginatable" son derece doğal bir şekilde okunmuyor
-let shouldPaginatize = a > 10 // Uydurma fiiller eğlenceli olabilir!
+let a = 5 // "a" herhangi bir şeyi ifade edebilir.
+let isPaginatable = a > 10 // "Paginatable" son derece doğal bir şekilde okunmuyor.
+let shouldPaginatize = a > 10 // Kafanıza göre fiiller uydurmayın!
 
 /* İyi */
 let postCount = 5
 let hasPagination = postCount > 10
-let shouldPaginate = postCount > 10 // alternatif olarak
+let shouldPaginate = postCount > 10 // alternatif
 ```
 
 ### Kotlin
 
 ```kt
 /* Kötü */
-val a = 5 // "a" herhangi bir şeyi ifade edebilir
-val isPaginatable = a > 10 // "Paginatable" son derece doğal bir şekilde okunmuyor
-val shouldPaginatize = a > 10 // Uydurma fiiller eğlenceli olabilir!
+val a = 5 // "a" herhangi bir şeyi ifade edebilir.
+val isPaginatable = a > 10 // "Paginatable" son derece doğal bir şekilde okunmuyor.
+val shouldPaginatize = a > 10 // Kafanıza göre fiiller uydurmayın!
 
 /* İyi */
 val postCount = 5
 val hasPagination = postCount > 10
-val shouldPaginate = postCount > 10 // alternatif olarak
+val shouldPaginate = postCount > 10 // alternatif
 ```
 
-## Kısaltmalardan Kaçının
+## Kısaltma Kullanmayın
 
-Kısaltmaları **kullanmayın**. Kısaltmalar, kodun okunabilirliğini azaltmaktan başka bir işe yaramaz. Kısa ve açıklayıcı bir isim bulmak zor olabilir, ancak bunu yapmamak için kısaltma kullanmak bir bahane değildir.
+Kısaltmalar, kodun okunabilirliğini azaltmaktan başka bir işe yaramaz. Bazen kısa ve açıklayıcı bir isim bulmak zor olabilir, ancak bunu yapmamak için kısaltma kullanmak bir bahane değildir.
 
 ### Swift
 
@@ -147,7 +147,7 @@ val onButtonClick = {}
 
 ## Bağlam (Context) Tekrarlanmasından Kaçının
 
-Bir isim tanımlandığı bağlamı tekrarlamamalıdır. Eğer bağlamı kaldırmak ismin okunabilirliğini azaltmıyorsa, her zaman isimden ilgili bağlamı kaldırın.
+Bir isim tanımlandığı bağlamı tekrarlamamalıdır. Eğer bağlamı kaldırmak ismin okunabilirliğini azaltmıyorsa, isimden ilgili bağlamı kaldırın.
 
 ### Kotlin
 
@@ -167,7 +167,7 @@ class MenuItem {
 
 ## Beklenen Sonucu Yansıtın
 
-Bir isim beklenen sonucu yansıtmalıdır.
+Bir isim kendisinden beklenen sonucu yansıtmalıdır.
 
 ### Swift
 
@@ -215,7 +215,7 @@ Aşağıdaki tabloda bu desenin nasıl uygulanabileceğine bir göz atın.
 | ---------------------- | -------- | ---------- | ----------------- | ---------------- |
 | `getUser`              |          | `get`      | `User`            |                  |
 | `getUserMessages`      |          | `get`      | `User`            | `Messages`       |
-| `handleClickOutside`   |          | `handle`   | `Click`           | `Outside`        |
+| `handleClickOutside`   |          | `handle`   | `Click/Tap`       | `Outside`        |
 | `shouldDisplayMessage` | `should` | `Display`  | `Message`         |                  |
 
 > **Not:** Bir değişkenin anlamını bağlamın sırası etkiler. Örneğin, `shouldUpdateComponent` ifadesi _sizin_ bir bileşeni güncellemek üzere olduğunuz anlamına gelirken, `shouldComponentUpdate` size _bileşenin kendisini_ güncelleyeceğini söyler ve yalnızca ne zaman güncellenmesi gerektiğini kontrol edersiniz. Başka bir deyişle, **`high context` bir değişkenin anlamını vurgular**.
