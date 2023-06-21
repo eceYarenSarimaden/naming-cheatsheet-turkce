@@ -215,8 +215,10 @@ Aşağıdaki tabloda bu desenin nasıl uygulanabileceğine bir göz atın.
 | ---------------------- | -------- | ---------- | ----------------- | ---------------- |
 | `getUser`              |          | `get`      | `User`            |                  |
 | `getUserMessages`      |          | `get`      | `User`            | `Messages`       |
-| `handleClickOutside`   |          | `handle`   | `Click/Tap`       | `Outside`        |
+| `handleClickOutside`   |          | `handle`   | `Click`           | `Outside`        |
 | `shouldDisplayMessage` | `should` | `Display`  | `Message`         |                  |
+| `sendPushNotification` | `send`   | `Push`     | `Notification`    |                  |
+| `handleSwipeGesture`   | `handle` | `Swipe`    | `Gesture`         |                  |
 
 > **Not:** Bir değişkenin anlamını bağlamın sırası etkiler. Örneğin, `shouldUpdateComponent` ifadesi _sizin_ bir bileşeni güncellemek üzere olduğunuz anlamına gelirken, `shouldComponentUpdate` size _bileşenin kendisini_ güncelleyeceğini söyler ve yalnızca ne zaman güncellenmesi gerektiğini kontrol edersiniz. Başka bir deyişle, **`high context` bir değişkenin anlamını vurgular**.
 
