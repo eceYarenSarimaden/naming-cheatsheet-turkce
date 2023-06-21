@@ -59,7 +59,7 @@ val friends = listOf("Kate", "John")
 
 ## Adlandırma kuralı
 
-Yalnızca **bir** tane adlandırma kuralı seçin ve onunla devam edin. Bu, `camelCase`, `PascalCase`, `snake_case` veya başka bir şey olabilir, önemli olan tutarlı olmasıdır. Birçok programlama dilinin kendi isimlendirme kuralları vardır; bunları öğrenmek için kullandığınız programlama dilinin dokümanlarını kontrol edin veya GitHub'da popüler olan projeleri inceleyin!
+Yalnızca **bir** tane adlandırma kuralı seçin ve onunla devam edin. Bu, `camelCase`, `PascalCase`, `snake_case` veya başka bir şey olabilir, önemli olan tutarlı olmasıdır. Birçok programlama dilinin kendi isimlendirme kuralları vardır; bunları öğrenmek için kullandığınız programlama dilinin dokümanlarını kontrol edebilir veya GitHub'da popüler olan projeleri inceleyebilirsiniz.
 
 ### Swift
 
