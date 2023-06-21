@@ -480,28 +480,32 @@ fun handleLinkClick() {
 link.setOnClickListener { handleLinkClick() }
 ```
 
-### `will`
+### `on`
+
+`on` ön eki, onButtonTap (düğmeye tıklanma), onDataReceived (veri alındığında), onErrorOccurred (hata oluştuğunda) gibi bir olayın gerçekleştiği veya bir durumun olduğu zamanı veya noktayı belirten fonksiyonlarda kullanılan yaygın bir ön ektir.
 
 #### Swift
 
 ```swift
-func applicationWillTerminate() {
+func onButtonTapped() {
+    ...
+}
+
+func onLocationUpdated() {
     ...
 }
 ```
 
-> Android'de `will` yerine genellikle `on` kullanılır.
-
 #### Kotlin
 
 ```kt
+fun onItemClick() {
+  ...
+}
+
 override fun onDestroy() {
   super.onDestroy()
   // Activity yok edilmeden önce çalışacak kodlar buraya yazılır.
-}
-
-fun onItemClick() {
-  ...
 }
 ```
 
