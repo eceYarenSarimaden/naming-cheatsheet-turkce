@@ -9,10 +9,10 @@
 # Mobil Geliştiriciler için Adlandırma Kılavuzu
 
 - [İngilizce dili](#i̇ngilizce-dili)
-- [Adlandırma kuralı](#adlandırma-kuralı)
+- [Adlandırma kuralları](#adlandırma-kuralları)
 - [Kısa - Sezgisel - Açıklayıcı](#kısa---sezgisel---açıklayıcı)
-- [Kısaltmalardan kaçının](#kısaltmalardan-kaçının)
-- [Bağlamın (Context) tekrarlanmasından kaçının](#bağlam-context-tekrarlanmasından-kaçının)
+- [Kısaltma Kullanmayın](#kısaltma-kullanmayın)
+- [Bağlamın (Context) tekrarlanmasından kaçının](#bağlamın-context-tekrarlanmasından-kaçının)
 - [Beklenen sonucu yansıtın](#beklenen-sonucu-yansıtın)
 - [Fonksiyonları adlandırmak](#fonksiyonları-adlandırmak)
   - [A/HC/LC deseni](#ahclc-deseni)
@@ -57,7 +57,7 @@ val friends = listOf("Kate", "John")
 
 > Beğenseniz de beğenmeseniz de, İngilizce programlamada egemen bir dil olarak kabul edilmektedir: Tüm programlama dillerinin sözdizimi (syntax) İngilizce olarak yazılır, ayrıca sayısız dokümantasyon ve eğitim materyali de İngilizce olarak hazırlanmıştır. Kodunuzu İngilizce olarak yazarak, kodunuzun bütünlüğünü büyük ölçüde artırırsınız.
 
-## Adlandırma kuralı
+## Adlandırma kuralları
 
 Yalnızca **bir** tane adlandırma kuralı seçin ve onunla devam edin. Bu, `camelCase`, `PascalCase`, `snake_case` veya başka bir şey olabilir, önemli olan tutarlı olmasıdır. Birçok programlama dilinin kendi isimlendirme kuralları vardır; bunları öğrenmek için kullandığınız programlama dilinin dokümanlarını kontrol edebilir veya GitHub'da popüler olan projeleri inceleyebilirsiniz.
 
