@@ -443,7 +443,7 @@ func applicationWillTerminate() {
 }
 ```
 
-> Android'de `will` ön eki yerine genellikle `on` kullanılır.
+> Android'de `will` yerine genellikle `on` kullanılır.
 
 #### Kotlin
 
