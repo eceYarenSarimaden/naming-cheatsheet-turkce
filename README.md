@@ -57,6 +57,8 @@ val friends = listOf("Kate", "John")
 
 > Beğenseniz de beğenmeseniz de, İngilizce programlamada egemen bir dil olarak kabul edilmektedir: Tüm programlama dillerinin sözdizimi (syntax) İngilizce olarak yazılır, ayrıca sayısız dokümantasyon ve eğitim materyali de İngilizce olarak hazırlanmıştır. Kodunuzu İngilizce olarak yazarak, kodunuzun bütünlüğünü büyük ölçüde artırırsınız.
 
+---
+
 ## Adlandırma kuralları
 
 Yalnızca **bir** tane adlandırma kuralı seçin ve onunla devam edin. Bu, `camelCase`, `PascalCase`, `snake_case` veya başka bir şey olabilir, önemli olan tutarlı olmasıdır. Birçok programlama dilinin kendi isimlendirme kuralları vardır; bunları öğrenmek için kullandığınız programlama dilinin dokümanlarını kontrol edebilir veya GitHub'da popüler olan projeleri inceleyebilirsiniz.
@@ -94,6 +96,8 @@ val shouldUpdate = true
 const val DEFAULT_PAGE_SIZE = 20
 ```
 
+---
+
 ## Kısa - Sezgisel - Açıklayıcı
 
 Bir isim _kısa_, _sezgisel_ ve _açıklayıcı_ olmalıdır:
@@ -130,6 +134,8 @@ val hasPagination = postCount > 10
 val shouldPaginate = postCount > 10 // alternatif
 ```
 
+---
+
 ## Kısaltma Kullanmayın
 
 Kısaltmalar, kodun okunabilirliğini azaltmaktan başka bir işe yaramaz. Bazen kısa ve açıklayıcı bir isim bulmak zor olabilir, ancak bunu yapmamak için kısaltma kullanmak bir bahane değildir.
@@ -153,6 +159,8 @@ val onBtnClk = {}
 /* İyi */
 val onButtonClick = {}
 ```
+
+---
 
 ## Bağlamın (Context) Tekrarlanmasından Kaçının
 
@@ -218,6 +226,8 @@ class Product(val name: String, var isFavorite: Boolean = false) {
   }
 }
 ```
+
+---
 
 ## Beklenen Sonucu Yansıtın
 
@@ -809,6 +819,8 @@ fun hideCancelButton() {
   binding.buttonCancel.visibility = View.GONE
 }
 ```
+
+---
 
 ## Tekil ve Çoğul (Singular and Plurals)
 
