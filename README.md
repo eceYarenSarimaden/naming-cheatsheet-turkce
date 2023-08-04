@@ -52,7 +52,7 @@ val amigos = listOf("Kate", "John")
 
 /* İyi */
 val firstName = "Gustavo"
-val friends = listOf("Kate", "JohnEsad")
+val friends = listOf("Kate", "John")
 ```
 
 > Beğenseniz de beğenmeseniz de, İngilizce programlamada egemen bir dil olarak kabul edilmektedir: Tüm programlama dillerinin sözdizimi (syntax) İngilizce olarak yazılır, ayrıca sayısız dokümantasyon ve eğitim materyali de İngilizce olarak hazırlanmıştır. Kodunuzu İngilizce olarak yazarak, kodunuzun bütünlüğünü büyük ölçüde artırırsınız.
